@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+import 'dart:math';
+import 'dart:core';
+void main() {
+  runApp (const MaterialApp(
+    home: MyApp(),
+  )); //material
+}
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+class _MyAppState extends State<MyApp> {
+
+
+  List colors=[
+    Colors.amber,
+    Colors.orange,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green,
+    Colors.brown,
+    Colors.black,
+    Colors.blueGrey,
+    Colors.cyan,
+    Colors.teal,
+    Colors.amberAccent,
+
+  ];
+  Random random =  Random();
+  int index= 0;
+  void changeIndex(){
+    setState(()=>index=random.nextInt(11));
+  }
+  @override
+  Widget build(BuildContext context) {
+    return (Scaffold(
+        backgroundColor: colors[index],
+
+        appBar: AppBar(
+          title: const Text('Background color changer'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                onPressed: () => changeIndex(),
+                child: const Text('Tap me '),
+
+              ),
+            ],
+          ),
+        )));
+  }
+}
