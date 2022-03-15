@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Image",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child:Text("Image"),
+          ),
+        backgroundColor: Colors.black,
+        ),
+        body: const Center(
+          child:
+          SizedBox(
+          height: 250,
+          width: double.infinity,
+           child: Image(
+            image:AssetImage('img/win.jpg'),
+          ),
+        ),
+        ),
+      ),
+    );
+  }
+}
